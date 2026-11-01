@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transmachado Transportes — Especialistas em lácteos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1f8a46;
+    --green-dark:#17703a;
+    --green-deep:#0e3b22;
+    --green-soft:#5c7a63;
+    --ink:#111;
+    --muted:#5c5c5c;
+    --bg:#f3f4f1;
+    --line:#d8dbd5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter Tight",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.4}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:12px;font-weight:500;font-size:15px;border-radius:10px;padding:16px 28px;transition:.2s;cursor:pointer;border:0;font-family:inherit}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-dark)}
+  .btn-outline{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:12px 22px}
+  .btn-outline:hover{background:#fff;color:var(--green-deep)}
+  .arrow{font-size:18px;line-height:1}
+
+  /* ---------- HEADER ---------- */
+  header{background:var(--green-deep);color:#fff;padding:10px 0}
+  header .wrap{display:flex;align-items:center;gap:28px}
+  .logo img{height:62px;width:auto}
+  .tagline{font-size:12px;color:rgba(255,255,255,.7);line-height:1.3;border-left:1px solid rgba(255,255,255,.25);padding-left:16px}
+  nav{margin-left:auto;display:flex;gap:32px;font-size:14px}
+  nav a:hover{color:#8fd6a5}
+  header .btn{margin-left:24px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:700px;background:#9fb59c url("https://images.unsplash.com/photo-1528458538087-f58e9ad895da?w=2000&q=80") center 70%/cover;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,244,241,.96) 0%,rgba(243,244,241,.8) 35%,rgba(243,244,241,0) 65%),linear-gradient(180deg,rgba(243,244,241,.5) 0%,rgba(243,244,241,0) 30%)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1fr 380px;gap:40px;padding-top:70px;padding-bottom:80px}
+  .hero h1{font-weight:900;font-size:clamp(48px,8vw,104px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;margin-top:18px}
+  .hero h1 em{display:block;color:var(--green);font-style:italic}
+  .hero-sub{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:flex-start}
+  .hero-lead{flex:0 0 230px;font-size:14px;color:#333;border-left:1px solid #555;padding-left:14px;margin-top:90px}
+  @media (max-width:1240px){.hero-lead{margin-top:0}}
+
+  .quote{background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-radius:16px;padding:30px 24px;box-shadow:0 20px 60px rgba(0,0,0,.12);align-self:start}
+  .quote h2{font-size:28px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+  .quote p.lead{font-size:14px;color:var(--muted);margin:10px 0 22px}
+  .field{display:block;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:12px;background:#fff}
+  .field span{display:block;font-size:12px;font-weight:600;margin-bottom:4px}
+  .field input,.field select{width:100%;border:0;outline:0;font:inherit;font-size:14px;color:var(--ink);background:transparent}
+  .field input::placeholder{color:#999}
+  .quote .btn{width:100%;justify-content:center;margin-top:10px}
+  .quote small{display:block;text-align:center;font-size:11px;color:#999;margin-top:16px}
+
+  /* ---------- STATS ---------- */
+  .stats{background:var(--bg);padding:50px 0}
+  .stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat{display:flex;gap:22px;align-items:flex-start;padding:0 36px;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:0;padding-left:0}
+  .stat .num{font-size:64px;font-weight:900;letter-spacing:-.04em;line-height:.9}
+  .stat .num sup{font-size:.5em;color:var(--green);vertical-align:top}
+  .stat .icon{width:56px;height:72px;flex:none;color:var(--green)}
+  .stat h3{font-size:15px;font-weight:600;text-transform:uppercase;line-height:1.2}
+  .stat p{font-size:13px;color:var(--muted);margin-top:14px;max-width:240px}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:70px 0 0;background:#fafbf9}
+  .services-head{display:grid;grid-template-columns:1fr 340px auto;gap:40px;align-items:end;margin-bottom:40px}
+  .services h2{font-size:clamp(40px,5.5vw,64px);font-weight:900;letter-spacing:-.04em;line-height:1;text-transform:uppercase;margin-top:14px}
+  .services h2 span{color:var(--green)}
+  .services-head p{font-size:14px;color:var(--muted)}
+  .link-green{color:var(--green);font-size:14px;border-bottom:1px solid var(--green);padding-bottom:4px;white-space:nowrap}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+  .card{position:relative;aspect-ratio:3/4;overflow:hidden;color:#fff;background:#333}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .card:hover img{transform:scale(1.06)}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.82) 100%)}
+  .card div{position:absolute;left:24px;right:24px;bottom:26px;z-index:1}
+  .card h3{font-size:22px;font-weight:600;line-height:1.1}
+  .card p{font-size:14px;opacity:.85;margin-top:12px}
+
+  /* ---------- CTA ---------- */
+  .cta{position:relative;min-height:560px;background:#8fae7a url("https://images.unsplash.com/photo-1780690208657-a8bd531b25b9?w=2000&q=80") center/cover}
+  .cta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,244,241,.97) 0%,rgba(243,244,241,.82) 40%,rgba(243,244,241,0) 70%)}
+  .cta .wrap{position:relative;padding-top:80px;padding-bottom:80px}
+  .cta h2{font-size:clamp(36px,4.5vw,56px);font-weight:900;letter-spacing:-.03em;line-height:1;text-transform:uppercase;margin-top:16px}
+  .cta h2 span{display:block;color:var(--green)}
+  .features{display:flex;margin:34px 0 46px}
+  .features li{list-style:none;font-size:13px;color:#444;border-left:1px solid #999;padding:0 40px 0 14px;max-width:190px}
+  .cta-actions{display:flex;align-items:center;gap:36px}
+  .link-underline{font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:3px}
+
+  footer{background:var(--green-deep);color:rgba(255,255,255,.7);padding:30px 0;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  footer img{height:44px;width:auto}
+  footer a:hover{color:#fff}
+
+  .whats-float{position:fixed;right:24px;bottom:24px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .2s}
+  .whats-float:hover{transform:scale(1.08)}
+  .whats-float svg{width:32px;height:32px}
+
+  /* ---------- RESPONSIVO ---------- */
+  @media (max-width:1000px){
+    nav,.tagline{display:none}
+    header .btn{margin-left:auto}
+    .hero .wrap{grid-template-columns:1fr}
+    .hero::before{background:linear-gradient(180deg,rgba(243,244,241,.95) 0%,rgba(243,244,241,.6) 50%,rgba(243,244,241,.3) 100%)}
+    .stats .wrap{grid-template-columns:1fr;gap:30px}
+    .stat{border-left:0;padding:0}
+    .services-head{grid-template-columns:1fr}
+    .cards{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 16px}
+    header .btn{display:none}
+    .logo img{height:50px}
+    .hero .wrap{padding-top:40px}
+    .hero-sub{flex-direction:column;gap:20px}
+    .hero-lead{flex:none}
+    .cards{grid-template-columns:1fr}
+    .card{aspect-ratio:4/3}
+    .features{flex-direction:column;gap:14px}
+    .cta-actions{flex-direction:column;align-items:flex-start;gap:20px}
+    .stat .num{font-size:52px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="img/logo.png" alt="Transmachado Transportes"></a>
+    <span class="tagline">Especialistas em<br>transporte de lácteos</span>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#orcamento" class="btn btn-outline">Solicitar orçamento <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Transporte especializado de lácteos</p>
+      <div class="hero-sub">
+        <h1>Do campo<em>à indústria.</em>No prazo.</h1>
+        <p class="hero-lead">Há mais de 10 anos levando leite e derivados com tanques isotérmicos, higienização rigorosa e controle de temperatura em cada etapa.</p>
+      </div>
+    </div>
+
+    <form class="quote" id="orcamento">
+      <h2>Solicitar<br>transporte</h2>
+      <p class="lead">Conte sua rota e volume. Respondemos com valor e prazo rapidamente.</p>
+      <label class="field"><span>Rota</span><input name="rota" placeholder="Origem → Destino"></label>
+      <label class="field"><span>Tipo de carga</span>
+        <select name="tipo">
+          <option>Selecione</option>
+          <option>Coleta de leite cru</option>
+          <option>Leite a granel</option>
+          <option>Derivados refrigerados</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label class="field"><span>Volume</span><input name="volume" placeholder="Litros por dia ou por viagem"></label>
+      <button class="btn btn-green" type="submit">Enviar pelo WhatsApp <span class="arrow">→</span></button>
+      <small>Seus dados estão protegidos.<br>Usamos apenas para o orçamento.</small>
+    </form>
+  </div>
+</section>
+
+<section class="stats" id="sobre">
+  <div class="wrap">
+    <div class="stat">
+      <div class="num">10<sup>+</sup></div>
+      <div><h3>Anos de<br>experiência</h3><p>Uma década dedicada exclusivamente ao setor lácteo</p></div>
+    </div>
+    <div class="stat">
+      <div class="num">24/7</div>
+      <div><h3>Rastreamento<br>na rota</h3><p>Você sempre sabe onde está sua carga</p></div>
+    </div>
+    <div class="stat">
+      <svg class="icon" viewBox="0 0 56 72" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M28 4C28 4 6 30 6 46a22 22 0 0 0 44 0C50 30 28 4 28 4Z"/><path d="M16 46a12 12 0 0 0 12 12" stroke-linecap="round"/></svg>
+      <div><h3>Qualidade<br>garantida</h3><p>Tanques em aço inox higienizados a cada viagem</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="wrap services-head">
+    <div>
+      <p class="eyebrow">Especialistas em</p>
+      <h2>Transporte <span>lácteo</span></h2>
+    </div>
+    <p>Cuidamos de toda a cadeia do leite: da coleta nas propriedades rurais à entrega na indústria, com roteiros planejados e temperatura sob controle.</p>
+    <a href="#orcamento" class="link-green">Pedir orçamento →</a>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1782852670165-fa3d9d35a59c?w=900&q=80" alt="Caminhão-tanque em propriedade rural">
+      <div><h3>Coleta de<br>leite</h3><p>Captação direto nas propriedades rurais com roteiros otimizados</p></div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1656988826404-bbb5ccb779bc?w=900&q=80" alt="Caminhão-tanque em aço inox">
+      <div><h3>Leite<br>a granel</h3><p>Tanques isotérmicos em aço inox para grandes volumes</p></div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1513828646384-e4d8ec30d2bb?w=900&q=80" alt="Linha industrial de laticínio">
+      <div><h3>Abastecimento<br>de laticínios</h3><p>Entregas pontuais para manter sua produção rodando</p></div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=900&q=80" alt="Garrafas de leite">
+      <div><h3>Derivados<br>lácteos</h3><p>Iogurtes, queijos e bebidas com temperatura controlada</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="wrap">
+    <p class="eyebrow">Logística do leite</p>
+    <h2>Seu leite —<span>nossa responsabilidade</span></h2>
+    <ul class="features">
+      <li>Higienização a cada viagem</li>
+      <li>Temperatura controlada</li>
+      <li>Atendimento direto e dedicado</li>
+    </ul>
+    <div class="cta-actions">
+      <a href="#orcamento" class="btn btn-green">Solicitar orçamento <span class="arrow">→</span></a>
+      <a href="#" class="link-underline js-whats">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Transmachado Transportes">
+    <span>© 2026 Transmachado Transportes. Todos os direitos reservados.</span>
+    <span>contato@transmachado.com.br · <a href="#" class="js-whats">WhatsApp (00) 00000-0000</a></span>
+  </div>
+</footer>
+
+<a href="#" class="whats-float js-whats" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.3Z"/></svg>
+</a>
+
+<script>
+  // Troque pelo número da empresa: 55 + DDD + número, só dígitos
+  const WHATSAPP = "5500000000000";
+  const whatsLink = msg => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+
+  document.querySelectorAll(".js-whats").forEach(a => {
+    a.href = whatsLink("Olá! Vim pelo site e gostaria de falar sobre transporte de lácteos.");
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  document.getElementById("orcamento").addEventListener("submit", e => {
+    e.preventDefault();
+    const f = e.target;
+    const tipo = f.tipo.value === "Selecione" ? "" : f.tipo.value;
+    const msg = "Olá! Gostaria de um orçamento de transporte.\n\n" +
+      "Rota: " + (f.rota.value || "-") + "\n" +
+      "Tipo de carga: " + (tipo || "-") + "\n" +
+      "Volume: " + (f.volume.value || "-");
+    window.open(whatsLink(msg), "_blank", "noopener");
+  });
+</script>
+
+</body>
+</html>
